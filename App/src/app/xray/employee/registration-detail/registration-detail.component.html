@@ -1,3 +1,12 @@
-<div *ngIf="registration">
-  <app-possessor-data [possessor]="registration.possessor"></app-possessor-data>
+<div class="container">
+  <app-page-header
+    [title]="'Registration number: ' + registration.possessor.id"
+    [subTitle]="'Status: ' + registration"
+  ></app-page-header>
+
+  <section class="content" *ngIf="registration">
+    <app-possessor-data
+      [possessor]="registration.possessor"
+    ></app-possessor-data>
+  </section>
 </div>

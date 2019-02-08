@@ -1,6 +1,6 @@
+import { Component, OnInit } from '@angular/core';
 import { XrayApiService } from './../../xray-api.service';
 import { Registration } from './../../classes/registration';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-registration-detail',
