@@ -1,0 +1,20 @@
+<header class="masthead row align-items-center">
+  <a href="/" class="col-2 col-md main-logo">
+    <img
+      src="/assets/img/svg/color-logo.svg"
+      class="d-sm-none"
+      alt="Tennessee Department of Environment &amp; Conservation"
+    />
+    <img
+      src="/assets/img/svg/tdec-color-white.svg"
+      class="d-none d-sm-block"
+      alt="Tennessee Department of Environment &amp; Conservation"
+    />
+  </a>
+
+  <h2 class="d-none d-md-block"><a href="#">X-Ray Registration</a></h2>
+  <div class="app-title col">
+    <!-- <app-tdec-login class="" ng-if="!th.isEmployee"></app-tdec-login> -->
+    <h2 ng-if="isEmployee"><a ng-href="/">TDEC Employees</a></h2>
+  </div>
+</header>

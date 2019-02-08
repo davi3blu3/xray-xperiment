@@ -1,0 +1,28 @@
+.masthead {
+  background: #435b7d;
+  height: 125px;
+
+  h2 {
+    a {
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+
+.main-logo {
+  margin-left: 1.25rem;
+}
+
+.app-title {
+  text-align: right;
+  margin-right: 1.25rem;
+
+  h2 {
+    color: white;
+  }
+
+  :hover {
+    text-decoration: none;
+  }
+}
