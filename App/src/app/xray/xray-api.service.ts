@@ -13,4 +13,10 @@ export class XrayApiService {
       ? this.http.get('')
       : this.http.get('api/registration');
   }
+
+  postRegistration(reg) {
+    environment.production
+      ? this.http.post('', reg)
+      : this.http.post('api/registration', reg);
+  }
 }

@@ -1,8 +1,8 @@
-import { Machine } from './machine';
-import { Possessor } from './possessor';
-import { Owner } from './owner';
-import { RadSafety } from './rad-safety';
 import { Document } from '../../shared/classes/document';
+import { Machine } from './machine';
+import { Owner } from './owner';
+import { Possessor } from './possessor';
+import { RadSafety } from './rad-safety';
 
 export class Registration {
   activityId: number;

@@ -9,6 +9,7 @@ import { Registration } from './../../classes/registration';
 })
 export class RegistrationDetailComponent implements OnInit {
   registration: Registration;
+  editP = false;
 
   constructor(private service: XrayApiService) {}
 
@@ -16,5 +17,9 @@ export class RegistrationDetailComponent implements OnInit {
     this.service.getRegistration().subscribe((reg: Registration) => {
       this.registration = reg;
     });
+  }
+
+  saveEdit() {
+    this.service.postRegistration(this.registration);
   }
 }

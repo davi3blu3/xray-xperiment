@@ -1,6 +1,6 @@
 import { ControlPanel } from './control-panel';
-import { Tube } from './tube';
 import { Document } from 'src/app/shared/classes/document';
+import { Tube } from './tube';
 
 export class Machine {
   controlNumber: number;
@@ -22,7 +22,7 @@ export class Machine {
     controlPanel?: ControlPanel[];
     createdBy?: string;
     deleteDate?: null;
-    documents?: [];
+    documents?: Document[];
     globalId?: string;
     id?: number;
     inStorage?: null;

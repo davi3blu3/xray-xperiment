@@ -1,0 +1,22 @@
+<h3 class="details-title">Owner</h3>
+<div>
+  <h4>{{ owner.name }}</h4>
+</div>
+
+<p>
+  <span class="data-item">
+    <b>Business Phone:</b> {{ owner.businessPhone }}
+  </span>
+  <br />
+  <span class="data-item"> <b>Email:</b> {{ owner.email }}</span>
+</p>
+
+<h5>Address</h5>
+<p>{{ owner.address.street1 }}</p>
+<p *ngIf="owner.address.street2">
+  {{ owner.address.street2 }}
+</p>
+<p>
+  {{ owner.address.city }}, {{ owner.address.state }}
+  {{ owner.address.postalCode }}
+</p>

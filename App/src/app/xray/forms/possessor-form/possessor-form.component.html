@@ -1,0 +1,94 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input class="form-control" [formControlName]="'possessorName'" />
+    <small class="form-text text-muted">Can be a company name</small>
+  </div>
+
+  <div class="form-group">
+    <label for="businessPhone">Business Phone</label>
+    <input
+      required
+      class="form-control"
+      phone-input
+      id="businessPhone"
+      name="businessPhone"
+      type="text"
+      ng-pattern="pf.patterns.phoneString"
+      ng-model="possessor.businessPhone"
+      ng-model-options="{'updateOn': 'blur'}"
+    />
+    <small class="form-text text-muted">Example: (555) 555-5555</small>
+  </div>
+
+  <div class="form-group">
+    <label for="fax">Fax number</label>
+    <input
+      phone-input
+      class="form-control"
+      id="fax"
+      name="fax"
+      type="text"
+      ng-pattern="pf.patterns.phoneString"
+      ng-model="possessor.fax"
+      ng-model-options="{'updateOn': 'blur'}"
+    />
+    <small class="form-text text-muted">Optional</small>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      required
+      class="form-control"
+      id="email"
+      name="email"
+      type="email"
+      maxlength="200"
+      ng-pattern="pf.patterns.email"
+      ng-model="possessor.email"
+      ng-model-options="{'updateOn': 'blur'}"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="cemail">Confirm Email</label>
+    <input
+      required
+      class="form-control"
+      id="cemail"
+      name="cemail"
+      type="email"
+      maxlength="200"
+      ng-model="possessor.cemail"
+      ng-model-options="{'updateOn': 'blur'}"
+    />
+  </div>
+
+  <div class="form-group">
+    <label>Facility Type</label>
+    <select
+      required
+      class="form-control"
+      name="medSpecialty"
+      ng-model="possessor.medSpecialty"
+    >
+    </select>
+  </div>
+
+  <label>What is the Facility Type?</label>
+  <input
+    required
+    name="medOther"
+    maxlength="500"
+    ng-model="possessor.medOther"
+    ng-model-options="{'updateOn': 'blur'}"
+    maxlength="255"
+  />
+
+  <!-- <div ng-if="!possessor.tdecId">
+  <h3 class="details-title">Physical Address</h3>
+
+  <h3 class="details-title">Billing Address</h3>
+</div> -->
+</form>
