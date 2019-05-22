@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { XrayApiService } from './../../xray-api.service';
-import { Registration } from './../../classes/registration';
+import { XrayApiService } from '../../../xray-api.service';
+import { Registration } from '../../../classes/registration';
 
 @Component({
   selector: 'app-registration-detail',
@@ -9,7 +9,10 @@ import { Registration } from './../../classes/registration';
 })
 export class RegistrationDetailComponent implements OnInit {
   registration: Registration;
-  editP = false;
+  editP: boolean;
+  editO: boolean;
+  editRs: boolean;
+  loading: boolean;
 
   constructor(private service: XrayApiService) {}
 
@@ -17,6 +20,12 @@ export class RegistrationDetailComponent implements OnInit {
     this.service.getRegistration().subscribe((reg: Registration) => {
       this.registration = reg;
     });
+
+    // TESTING LOADING ANIMATION
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+    }, 10000);
   }
 
   saveEdit() {

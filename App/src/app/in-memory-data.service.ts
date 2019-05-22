@@ -69,9 +69,9 @@ export class InMemoryDataService implements InMemoryDbService {
         updatedOn: null
       },
       owner: {
-        name: 'Keystone Dental Care, Inc OWNER',
+        name: 'Keystone Dental Care, Inc',
         address: {
-          street1: '603 Bert St, Ste 12 OWNER',
+          street1: '603 Bert St, Ste 12',
           street2: null,
           city: 'Johnson City',
           county: 'Washington',

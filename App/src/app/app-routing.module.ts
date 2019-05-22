@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegistrationDetailComponent } from './xray/employee/registration-detail/registration-detail.component';
+import { RegistrationDetailComponent } from './xray/views/employee/registration-detail/registration-detail.component';
 
 const routes: Routes = [{ path: '', component: RegistrationDetailComponent }];
 

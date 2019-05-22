@@ -1,0 +1,71 @@
+<div class="row">
+  <p class="col-md-6">
+    <b>Control Panel Manufacturer:</b>
+    <span
+      ng-class="{'removed-item': machine.removed.manufacturer, 'added-item': machine.added.manufacturer}"
+      >{{ machine.controlPanel.manufacturer }}</span
+    >
+  </p>
+
+  <p class="col-md-6">
+    <b>Type:</b>
+    <span
+      ng-class="{'removed-item': machine.removed.motility, 'added-item': machine.added.motility}"
+      >{{ machine.motility }}</span
+    >
+  </p>
+</div>
+
+<div class="row">
+  <p class="col-md-6">
+    <b>Control Panel Serial Number:</b>
+    <span
+      ng-class="{'removed-item': machine.removed.serialNumber, 'added-item': machine.added.serialNumber}"
+      >{{ machine.controlPanel.serialNumber }}</span
+    >
+  </p>
+
+  <p class="col-md-6">
+    <b>Machine Type:</b>
+    <span
+      ng-class="{'removed-item': machine.removed.category, 'added-item': machine.added.category}"
+      >{{ machine.controlPanel.type.category }}</span
+    >:
+    <span
+      ng-class="{'removed-item': machine.removed.subCategory, 'added-item': machine.added.subCategory}"
+      >{{ machine.controlPanel.type.subCategory }}</span
+    >
+  </p>
+</div>
+
+<div class="row">
+  <p class="col-md-6" ng-if="!machine.controlPanel.replacement">
+    <b>Date of Possession:</b>
+    <span
+      ng-class="{'removed-item':machine.removed.possessionDate, 'added-item': machine.added.possessionDate}"
+      >{{ machine.possessionDate | date: 'longDate':'UTC' }}</span
+    >
+  </p>
+
+  <p class="col-md-6" ng-if="machine.controlPanel.replacement">
+    <b>Date of Replacement:</b>
+    <span
+      ng-class="{'removed-item':machine.removed.replacementDate, 'added-item': machine.added.replacementDate}"
+      >{{ machine.controlPanel.replacementDate | date: 'longDate':'UTC' }}</span
+    >
+  </p>
+
+  <p class="col-md-6" ng-if="machine.controlPanel.room">
+    <b>Room:</b>
+    <span
+      ng-class="{'removed-item':machine.removed.room, 'added-item': machine.added.room}"
+      >{{ machine.controlPanel.room }}</span
+    >
+  </p>
+</div>
+
+<div ng-if="machine.controlPanel.replacement">
+  <strong>Is this a new control panel?</strong>
+  <span ng-if="machine.controlPanel.replacement"> Yes</span>
+  <span ng-if="!machine.controlPanel.replacement"> No</span>
+</div>

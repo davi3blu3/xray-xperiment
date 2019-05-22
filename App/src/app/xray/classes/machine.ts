@@ -4,7 +4,7 @@ import { Tube } from './tube';
 
 export class Machine {
   controlNumber: number;
-  controlPanel: ControlPanel[];
+  controlPanel: ControlPanel;
   createdBy: string;
   deleteDate: null;
   documents: Document[];
@@ -19,7 +19,7 @@ export class Machine {
 
   constructor(options: {
     controlNumber?: number;
-    controlPanel?: ControlPanel[];
+    controlPanel?: ControlPanel;
     createdBy?: string;
     deleteDate?: null;
     documents?: Document[];
@@ -33,7 +33,7 @@ export class Machine {
     tubes?: Tube[];
   }) {
     this.controlNumber = options.controlNumber || null;
-    this.controlPanel = options.controlPanel || [];
+    this.controlPanel = options.controlPanel;
     this.createdBy = options.createdBy || '';
     this.deleteDate = options.deleteDate || null;
     this.documents = options.documents || [];

@@ -1,6 +1,6 @@
 <div>
   <h4>{{ possessor.name }}</h4>
-  <h6>{{ possessor.medSpecialty }}</h6>
+  <!-- <h6>{{ possessor.medSpecialty }}</h6> -->
 </div>
 
 <p>
@@ -16,6 +16,8 @@
   <span ng-if="possessor.medOther">{{ possessor.medOther }}</span>
 </p>
 
+<hr />
+
 <h5>Physical Address</h5>
 <p>{{ possessor.physicalAddress.street1 }}</p>
 <p *ngIf="possessor.physicalAddress.street2">
@@ -25,6 +27,8 @@
   {{ possessor.physicalAddress.city }}, {{ possessor.physicalAddress.state }}
   {{ possessor.physicalAddress.postalCode }}
 </p>
+
+<hr />
 
 <h5>Billing Address</h5>
 <p>{{ possessor.billingAddress.street1 }}</p>

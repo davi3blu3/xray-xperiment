@@ -1,0 +1,25 @@
+<h4 class="details-title">Tube {{ tube.controlNumber }}</h4>
+<div class="mb-3">
+  <button
+    *ngIf="!editT"
+    class="btn btn-outline-primary"
+    (click)="editT = !editT"
+  >
+    Edit
+  </button>
+  <div *ngIf="editT">
+    <!-- add save function -->
+    <button class="btn btn-outline-primary mr-2" (click)="editT = !editT">
+      Save
+    </button>
+
+    <button class="btn btn-outline-danger" *ngIf="regStatus === 'Submitted'">
+      Delete Tube
+    </button>
+    <button class="btn btn-outline-danger" *ngIf="regStatus === 'Approved'">
+      Dispose Tube
+    </button>
+  </div>
+</div>
+<app-tube-data tube="tube" *ngIf="!editT"></app-tube-data>
+<app-tube-form tube="tube" *ngIf="editT"></app-tube-form>

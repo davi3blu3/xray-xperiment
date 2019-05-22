@@ -1,0 +1,117 @@
+<app-tdec-loading *ngIf="loading"></app-tdec-loading>
+<div class="container">
+  <app-page-header
+    *ngIf="registration"
+    [title]="
+      registration.billingStatus === 'Active'
+        ? 'Registration Number: ' + registration.registrationNumber
+        : 'Tracking Number: ' + registration.id
+    "
+    [subTitle]="'Status: ' + registration.billingStatus"
+  ></app-page-header>
+
+  <section class="content" *ngIf="registration">
+    <!--POSSESSOR INFORMATION-->
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="details-title"><span *ngIf="editP">Edit</span> Possessor</h3>
+        <div class="mb-3">
+          <button
+            *ngIf="!editP"
+            class="btn btn-outline-primary"
+            (click)="editP = !editP"
+          >
+            Edit
+          </button>
+          <button
+            *ngIf="editP"
+            class="btn btn-outline-success"
+            (click)="editP = !editP"
+          >
+            <!--add save function-->
+            Save
+          </button>
+        </div>
+        <app-possessor-data
+          *ngIf="!editP"
+          [possessor]="registration.possessor"
+        ></app-possessor-data>
+        <app-possessor-form
+          *ngIf="editP"
+          [possessor]="registration.possessor"
+        ></app-possessor-form>
+      </div>
+
+      <!--OWNER INFORMATION-->
+      <div class="col-md-4">
+        <h3 class="details-title">Owner</h3>
+        <div class="mb-3">
+          <button
+            *ngIf="!editO"
+            class="btn btn-outline-primary"
+            (click)="editO = !editO"
+          >
+            Edit
+          </button>
+          <button
+            *ngIf="editO"
+            class="btn btn-outline-success"
+            (click)="editO = !editO"
+          >
+            <!--add save function-->
+            Save
+          </button>
+        </div>
+        <app-owner-data
+          *ngIf="!editO"
+          [owner]="registration.owner"
+        ></app-owner-data>
+        <app-owner-form
+          *ngIf="editO"
+          [owner]="registration.owner"
+        ></app-owner-form>
+      </div>
+
+      <!--RADSAFETY INFORMATION-->
+      <div class="col-md-4">
+        <h3 class="details-title">Radiation Safety Officer</h3>
+        <div class="mb-3">
+          <button
+            *ngIf="!editRs"
+            class="btn btn-outline-primary"
+            (click)="editRs = !editRs"
+          >
+            Edit
+          </button>
+          <button
+            *ngIf="editRs"
+            class="btn btn-outline-success"
+            (click)="editRs = !editRs"
+          >
+            <!--add save function-->
+            Save
+          </button>
+        </div>
+        <app-rad-safety-data
+          *ngIf="!editRs"
+          [radSafety]="registration.radSafety"
+        ></app-rad-safety-data>
+        <app-rad-safety-form
+          *ngIf="editRs"
+          [radSafety]="registration.radSafety"
+        ></app-rad-safety-form>
+      </div>
+    </div>
+
+    <!--MACHINE INFORMATION-->
+    <app-pager-controls></app-pager-controls>
+    <div class="row" *ngFor="let machine of registration.machines">
+      <app-machine-detail
+        class="col-12"
+        [registration]="registration"
+        [machine]="machine"
+      ></app-machine-detail>
+    </div>
+    <app-pager-controls></app-pager-controls>
+  </section>
+</div>

@@ -1,6 +1,7 @@
-import { Possessor } from './../../classes/possessor';
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { Possessor } from './../../classes/possessor';
 
 @Component({
   selector: 'app-possessor-form',
