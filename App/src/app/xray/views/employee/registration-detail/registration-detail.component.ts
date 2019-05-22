@@ -25,7 +25,7 @@ export class RegistrationDetailComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
-    }, 10000);
+    }, 3000);
   }
 
   saveEdit() {
