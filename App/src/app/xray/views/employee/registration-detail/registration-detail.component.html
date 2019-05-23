@@ -104,14 +104,81 @@
     </div>
 
     <!--MACHINE INFORMATION-->
-    <app-pager-controls></app-pager-controls>
-    <div class="row" *ngFor="let machine of registration.machines">
+    <div class="row">
+      <div class="col-12 col-sm-3 col-md-4 col-lg-6">
+        <h3 class="details-title">Machines</h3>
+      </div>
+      <div class="col-12 col-sm-9 col-md-8 col-lg-6 pt-sm-3 mt-sm-1">
+        <button class="btn btn-outline-primary">Add New Machine</button>
+        <!-- Add New Tube CR link -->
+        <button class="btn btn-outline-primary ml-3">
+          View Inactive Machines
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="row"
+      *ngFor="
+        let machine of registration.machines
+          | slice: pager.sliceStart:pager.sliceEnd + 1
+      "
+    >
       <app-machine-detail
         class="col-12"
         [registration]="registration"
         [machine]="machine"
       ></app-machine-detail>
     </div>
-    <app-pager-controls></app-pager-controls>
+    <app-pager-controls [(pager)]="pager"></app-pager-controls>
+
+    <!-- DOCUMENT INFORMATION -->
+    <h3 class="details-title">Documents</h3>
+
+    <!-- COMMENTS INFORMATION -->
+    <h3 class="details-title">Comments</h3>
+
+    <!--Approve or Deny / Activate or Inactivate -->
+    <hr />
+    <div class="mb-5">
+      <button class="btn btn-success" ng-click="ar.saveEdit(ar.registration)">
+        Save
+      </button>
+      <div
+        class="d-inline"
+        ng-if="ar.registration.status == 'Submitted' || ar.registration.status == 'Pending'"
+      >
+        <button
+          class="btn btn-secondary ml-2"
+          ng-click="ar.postDeny(ar.registration)"
+        >
+          Deny
+        </button>
+        <button
+          class="btn btn-primary ml-2"
+          ng-class="{'tdec-button-disabled': !ar.completeCheck()}"
+          ng-disabled="!ar.completeCheck()"
+          ng-click="ar.postApprove(ar.registration, 'employee')"
+        >
+          Approve
+        </button>
+      </div>
+      <div class="d-inline" ng-if="ar.registration.status == 'Approved'">
+        <button
+          class="btn btn-danger ml-2"
+          ng-if="ar.registration.billingStatus === 'Active'"
+          ng-click="ar.inactivate(ar.registration)"
+        >
+          Inactivate
+        </button>
+        <button
+          class="btn btn-danger ml-2"
+          ng-if="ar.registration.billingStatus !== 'Active'"
+          ng-click="ar.activate(ar.registration)"
+        >
+          Activate
+        </button>
+      </div>
+    </div>
   </section>
 </div>
