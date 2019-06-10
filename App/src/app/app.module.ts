@@ -16,14 +16,16 @@ import { AppRoutingModule } from './app-routing.module';
 /*
  *  Component Imports
  */
+
+// TDEC Components
+import { TdecHeaderComponent } from './shared/tdec-components/tdec-header/tdec-header.component';
+import { TdecLoadingComponent } from './shared/tdec-components/tdec-loading/tdec-loading.component';
+import { TdecFooterComponent } from './shared/tdec-components/tdec-footer/tdec-footer.component';
+
 // Shared Components
 import { AppComponent } from './app.component';
 import { PageHeaderComponent } from './shared/tdec-components/page-header/page-header.component';
-import { TdecHeaderComponent } from './shared/tdec-components/tdec-header/tdec-header.component';
 import { PagerControlsComponent } from './shared/tdec-components/pager-controls/pager-controls.component';
-
-// XRay Components
-import { RegistrationDetailComponent } from './xray/views/employee/registration-detail/registration-detail.component';
 import { MachineDetailComponent } from './xray/views/employee/registration-detail/machine-detail/machine-detail.component';
 import { TubeDetailComponent } from './xray/views/employee/registration-detail/machine-detail/tube-detail/tube-detail.component';
 
@@ -38,7 +40,9 @@ import { OwnerFormComponent } from './xray/forms/owner-form/owner-form.component
 import { RadSafetyFormComponent } from './xray/forms/rad-safety-form/rad-safety-form.component';
 import { CPanelFormComponent } from './xray/forms/c-panel-form/c-panel-form.component';
 import { TubeFormComponent } from './xray/forms/tube-form/tube-form.component';
-import { TdecLoadingComponent } from './shared/tdec-components/tdec-loading/tdec-loading.component';
+
+// XRay View Components
+import { RegistrationDetailComponent } from './xray/views/employee/registration-detail/registration-detail.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,8 @@ import { TdecLoadingComponent } from './shared/tdec-components/tdec-loading/tdec
     MachineDetailComponent,
     TubeDetailComponent,
     PagerControlsComponent,
-    TdecLoadingComponent
+    TdecLoadingComponent,
+    TdecFooterComponent
   ],
   imports: [
     BrowserModule,
