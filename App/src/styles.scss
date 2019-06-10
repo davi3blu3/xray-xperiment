@@ -1,16 +1,25 @@
 @charset "utf-8";
-@import 'node_modules/tdec-design-standards/scss/_colors';
 
-/* Variable Declarations - Overriding Bootstrap Defaults */
-$table-dark-bg: $tdec-color-navy__light;
+/* Import TDEC styles */
+@import 'node_modules/tdec-design-standards/scss/_colors';
 
 /* Bootstrap v4.2.1 - Required Modules */
 @import 'node_modules/bootstrap/scss/functions';
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
 
-/* Bootstrap v4.2.1 - Additional Modules */
-@import 'node_modules/bootstrap/scss/pagination';
+/* Variable Declarations to Override Bootstrap Defaults */
+$theme-colors: (
+  'primary': $tdec-color-navy,
+  'secondary': $tdec-color-gray,
+  'success': $color-green-light,
+  'danger': $tdec-color-red
+);
+
+$table-dark-bg: $tdec-color-navy__light;
+
+/* Bootstrap v4.2.1 */
+@import 'node_modules/bootstrap/scss/bootstrap';
 
 /*
  * TDEC Global Styles

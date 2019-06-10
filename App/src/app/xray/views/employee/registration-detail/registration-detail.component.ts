@@ -26,10 +26,10 @@ export class RegistrationDetailComponent implements OnInit {
     });
 
     // TESTING LOADING ANIMATION
-    this.loading = true;
-    setTimeout(() => {
-      this.loading = false;
-    }, 9000);
+    // this.loading = true;
+    // setTimeout(() => {
+    //   this.loading = false;
+    // }, 9000);
   }
 
   saveEdit() {
