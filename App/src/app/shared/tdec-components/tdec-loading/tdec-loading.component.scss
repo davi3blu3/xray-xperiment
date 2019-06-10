@@ -48,7 +48,6 @@
 
 .star-shape {
   position: relative;
-
   display: block;
   color: white;
   width: 0px;
@@ -62,7 +61,6 @@
 
 .star-shape:before {
   position: absolute;
-  content: '';
   top: -4.5px;
   left: -6.5px;
   display: block;
@@ -71,6 +69,7 @@
   border-left: 3px solid transparent;
   border-bottom: 8px solid white;
   border-right: 3px solid transparent;
+  content: '';
   transform: rotate(-35deg);
 }
 
@@ -78,7 +77,6 @@
   position: absolute;
   top: 0.3px;
   left: -10.5px;
-  content: '';
   display: block;
   color: white;
   width: 0px;
@@ -86,11 +84,12 @@
   border-left: 10px solid transparent;
   border-bottom: 7px solid white;
   border-right: 10px solid transparent;
+  content: '';
   transform: rotate(-70deg);
 }
 
 @keyframes CIRCLE-SPIN {
-  30% {
+  33% {
     transform: rotateZ(0);
   }
   100% {
@@ -99,10 +98,10 @@
 }
 
 @keyframes STAR-1-MOVEMENT {
-  30% {
+  33% {
     transform: rotate(50deg) translateX(-12px) rotate(20deg);
   }
-  60% {
+  66% {
     transform: rotate(50deg) translateX(-40px) rotate(240deg);
   }
   100% {
@@ -111,10 +110,10 @@
 }
 
 @keyframes STAR-2-MOVEMENT {
-  30% {
+  33% {
     transform: rotate(-10deg) translateX(12px) rotate(50deg);
   }
-  60% {
+  66% {
     transform: rotate(-10deg) translateX(40px) rotate(260deg);
   }
   100% {
@@ -123,10 +122,10 @@
 }
 
 @keyframes STAR-3-MOVEMENT {
-  30% {
+  33% {
     transform: rotate(-70deg) translateX(-12px) rotate(15deg);
   }
-  60% {
+  66% {
     transform: rotate(-70deg) translateX(-40px) rotate(235deg);
   }
   100% {

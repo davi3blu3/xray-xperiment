@@ -23,16 +23,13 @@ export class RegistrationDetailComponent implements OnInit {
       this.registration = reg;
 
       this.pager = new Pager(this.registration.machines.length);
-      // console.log('number of machines: ', this.pager.totalItems);
-      // console.log('total pages: ', this.pager.totalPages);
-      // console.log('slice: ', this.pager.sliceStart, '-', this.pager.sliceEnd);
     });
 
     // TESTING LOADING ANIMATION
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
-    }, 2000);
+    }, 9000);
   }
 
   saveEdit() {
