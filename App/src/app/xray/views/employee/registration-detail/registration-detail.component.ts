@@ -1,7 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ComponentFactoryResolver
+} from '@angular/core';
+
 import { XrayApiService } from '../../../xray-api.service';
+import { OverlayService } from './../../../../shared/services/overlay.service';
+
 import { Registration } from '../../../classes/registration';
 import { Pager } from './../../../../shared/classes/pager';
+import { ModalDirective } from './../../../../shared/directives/modal.directive';
+import { TdecModalComponent } from './../../../../shared/tdec-components/tdec-modal/tdec-modal.component';
 
 @Component({
   selector: 'app-registration-detail',
@@ -9,6 +19,8 @@ import { Pager } from './../../../../shared/classes/pager';
   styleUrls: ['./registration-detail.component.scss']
 })
 export class RegistrationDetailComponent implements OnInit {
+  @ViewChild(ModalDirective) modal: ModalDirective;
+
   registration: Registration;
   editP: boolean;
   editO: boolean;
@@ -16,23 +28,47 @@ export class RegistrationDetailComponent implements OnInit {
   loading: boolean;
   pager: Pager;
 
-  constructor(private service: XrayApiService) {}
+  // currentContainerRef;
+  modalSub;
+
+  constructor(
+    private xrayService: XrayApiService,
+    private overlayService: OverlayService,
+    private resolver: ComponentFactoryResolver
+  ) {}
 
   ngOnInit() {
-    this.service.getRegistration().subscribe((reg: Registration) => {
+    this.xrayService.getRegistration().subscribe((reg: Registration) => {
       this.registration = reg;
 
       this.pager = new Pager(this.registration.machines.length);
     });
 
-    // TESTING LOADING ANIMATION
-    // this.loading = true;
-    // setTimeout(() => {
-    //   this.loading = false;
-    // }, 9000);
+    // Testing Load animation
+    this.overlayService.loadingToggle.next(true);
+    setTimeout(() => {
+      this.overlayService.loadingToggle.next(false);
+    }, 5000);
   }
 
   saveEdit() {
-    this.service.postRegistration(this.registration);
+    this.xrayService.postRegistration(this.registration);
   }
+
+  // openModal(message) {
+  //   const modalFactory = this.resolver.resolveComponentFactory(
+  //     TdecModalComponent
+  //   );
+  //   const vcRef = this.modal.viewContainerRef;
+  //   const modalComp = vcRef.createComponent(modalFactory);
+  //   this.modalSub = modalComp.instance.response$.subscribe(response => {
+  //     this.closeModal(modalComp, response);
+  //   });
+  // }
+
+  // closeModal(modal, res) {
+  //   console.log('close modal response:', res);
+  //   modal.destroy();
+  //   this.modalSub.unsubscribe();
+  // }
 }

@@ -21,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TdecHeaderComponent } from './shared/tdec-components/tdec-header/tdec-header.component';
 import { TdecLoadingComponent } from './shared/tdec-components/tdec-loading/tdec-loading.component';
 import { TdecFooterComponent } from './shared/tdec-components/tdec-footer/tdec-footer.component';
+import { TdecModalComponent } from './shared/tdec-components/tdec-modal/tdec-modal.component';
 
 // Shared Components
 import { AppComponent } from './app.component';
@@ -43,6 +44,8 @@ import { TubeFormComponent } from './xray/forms/tube-form/tube-form.component';
 
 // XRay View Components
 import { RegistrationDetailComponent } from './xray/views/employee/registration-detail/registration-detail.component';
+import { ModalDirective } from './shared/directives/modal.directive';
+import { TdecOverlayComponent } from './shared/tdec-components/tdec-overlay/tdec-overlay.component';
 
 @NgModule({
   declarations: [
@@ -64,8 +67,12 @@ import { RegistrationDetailComponent } from './xray/views/employee/registration-
     TubeDetailComponent,
     PagerControlsComponent,
     TdecLoadingComponent,
-    TdecFooterComponent
+    TdecFooterComponent,
+    TdecModalComponent,
+    ModalDirective,
+    TdecOverlayComponent
   ],
+  entryComponents: [TdecModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

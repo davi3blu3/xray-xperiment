@@ -1,0 +1,20 @@
+<div class="overlay">
+  <div class="popup card">
+    <div class="card-header popup-header">
+      <img class="tn-logo" src="/assets/img/tn-three-stars.png" />
+    </div>
+    <div class="card-body">
+      <div class="container">
+        <p>Alert(): {{ message }}</p>
+        <div class="text-right">
+          <button class="btn btn-danger" (click)="sendResponse('No')">
+            No
+          </button>
+          <button class="btn btn-primary ml-2" (click)="sendResponse('Yes')">
+            Yes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

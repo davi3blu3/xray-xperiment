@@ -1,4 +1,3 @@
-<app-tdec-loading *ngIf="loading"></app-tdec-loading>
 <div class="container">
   <app-page-header
     *ngIf="registration"
@@ -9,6 +8,15 @@
     "
     [subTitle]="'Status: ' + registration.billingStatus"
   ></app-page-header>
+
+  <!-- TEST MODAL -->
+  <!-- <button
+    type="button"
+    class="btn btn-primary mt-2"
+    (click)="openModal('message from template')"
+  >
+    Launch popup
+  </button> -->
 
   <section class="content" *ngIf="registration">
     <!--POSSESSOR INFORMATION-->
