@@ -10,8 +10,6 @@ import { OverlayService } from './../../../../shared/services/overlay.service';
 
 import { Registration } from '../../../classes/registration';
 import { Pager } from './../../../../shared/classes/pager';
-import { ModalDirective } from './../../../../shared/directives/modal.directive';
-import { TdecModalComponent } from './../../../../shared/tdec-components/tdec-modal/tdec-modal.component';
 
 @Component({
   selector: 'app-registration-detail',
@@ -19,8 +17,6 @@ import { TdecModalComponent } from './../../../../shared/tdec-components/tdec-mo
   styleUrls: ['./registration-detail.component.scss']
 })
 export class RegistrationDetailComponent implements OnInit {
-  @ViewChild(ModalDirective) modal: ModalDirective;
-
   registration: Registration;
   editP: boolean;
   editO: boolean;
@@ -54,21 +50,4 @@ export class RegistrationDetailComponent implements OnInit {
   saveEdit() {
     this.xrayService.postRegistration(this.registration);
   }
-
-  // openModal(message) {
-  //   const modalFactory = this.resolver.resolveComponentFactory(
-  //     TdecModalComponent
-  //   );
-  //   const vcRef = this.modal.viewContainerRef;
-  //   const modalComp = vcRef.createComponent(modalFactory);
-  //   this.modalSub = modalComp.instance.response$.subscribe(response => {
-  //     this.closeModal(modalComp, response);
-  //   });
-  // }
-
-  // closeModal(modal, res) {
-  //   console.log('close modal response:', res);
-  //   modal.destroy();
-  //   this.modalSub.unsubscribe();
-  // }
 }

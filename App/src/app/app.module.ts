@@ -44,7 +44,6 @@ import { TubeFormComponent } from './xray/forms/tube-form/tube-form.component';
 
 // XRay View Components
 import { RegistrationDetailComponent } from './xray/views/employee/registration-detail/registration-detail.component';
-import { ModalDirective } from './shared/directives/modal.directive';
 import { TdecOverlayComponent } from './shared/tdec-components/tdec-overlay/tdec-overlay.component';
 
 @NgModule({
@@ -69,7 +68,6 @@ import { TdecOverlayComponent } from './shared/tdec-components/tdec-overlay/tdec
     TdecLoadingComponent,
     TdecFooterComponent,
     TdecModalComponent,
-    ModalDirective,
     TdecOverlayComponent
   ],
   entryComponents: [TdecModalComponent],
