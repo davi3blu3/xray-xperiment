@@ -10,13 +10,23 @@
   ></app-page-header>
 
   <!-- TEST MODAL -->
-  <!-- <button
+  <button type="button" class="btn btn-primary mt-2" (click)="openAlert()">
+    Alert
+  </button>
+  <button
     type="button"
-    class="btn btn-primary mt-2"
-    (click)="openModal('message from template')"
+    class="btn btn-primary mt-2 ml-2"
+    (click)="openConfirm()"
   >
-    Launch popup
-  </button> -->
+    Confirm
+  </button>
+  <button
+    type="button"
+    class="btn btn-primary mt-2 ml-2"
+    (click)="openPrompt()"
+  >
+    Prompt
+  </button>
 
   <section class="content" *ngIf="registration">
     <!--POSSESSOR INFORMATION-->

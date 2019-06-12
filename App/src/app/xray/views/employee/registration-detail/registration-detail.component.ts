@@ -1,9 +1,5 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  ComponentFactoryResolver
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { skip } from 'rxjs/operators';
 
 import { XrayApiService } from '../../../xray-api.service';
 import { OverlayService } from './../../../../shared/services/overlay.service';
@@ -27,10 +23,11 @@ export class RegistrationDetailComponent implements OnInit {
   // currentContainerRef;
   modalSub;
 
+  myRes; // response from confirm modal
+
   constructor(
     private xrayService: XrayApiService,
-    private overlayService: OverlayService,
-    private resolver: ComponentFactoryResolver
+    private overlayService: OverlayService
   ) {}
 
   ngOnInit() {
@@ -40,14 +37,38 @@ export class RegistrationDetailComponent implements OnInit {
       this.pager = new Pager(this.registration.machines.length);
     });
 
-    // Testing Load animation
-    this.overlayService.loadingToggle.next(true);
-    setTimeout(() => {
-      this.overlayService.loadingToggle.next(false);
-    }, 5000);
+    // TESTING LOADING ANIMATION
+    // this.overlayService.loadingToggle.next(true);
+    // setTimeout(() => {
+    //   this.overlayService.loadingToggle.next(false);
+    // }, 2000);
   }
 
   saveEdit() {
     this.xrayService.postRegistration(this.registration);
+  }
+
+  openAlert() {
+    this.overlayService.alert('This is an important ALERT message.');
+  }
+
+  openConfirm() {
+    this.overlayService.confirm('This is an important CONFIRM message.');
+    const confirm = this.overlayService.response
+      .pipe(skip(1))
+      .subscribe(res => {
+        this.myRes = res;
+        console.log('the confirm is', this.myRes);
+        confirm.unsubscribe();
+      });
+  }
+
+  openPrompt() {
+    this.overlayService.prompt('This is an important PROMPT message.');
+    const prompt = this.overlayService.response.pipe(skip(1)).subscribe(res => {
+      this.myRes = res;
+      console.log('the prompt is', this.myRes);
+      prompt.unsubscribe();
+    });
   }
 }

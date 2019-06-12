@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
+import { ModalOption } from '../../classes/modal-option';
+import { OverlayService } from './../../services/overlay.service';
 
 @Component({
   selector: 'app-tdec-modal',
@@ -7,7 +10,28 @@ import { Subject } from 'rxjs';
   styleUrls: ['./tdec-modal.component.scss']
 })
 export class TdecModalComponent implements OnInit {
-  constructor() {}
+  options: ModalOption;
+  txtPrompt = '';
 
-  ngOnInit() {}
+  constructor(private overlayService: OverlayService) {}
+
+  ngOnInit() {
+    this.overlayService.modalOptions.subscribe(options => {
+      this.options = options;
+    });
+  }
+
+  update(e) {
+    this.txtPrompt = e.target.value;
+  }
+
+  close(res) {
+    this.overlayService.response.next(res);
+    this.overlayService.modalToggle.next(false);
+  }
+
+  closePrompt(res) {
+    this.overlayService.response.next(res);
+    this.overlayService.modalToggle.next(false);
+  }
 }

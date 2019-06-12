@@ -15,12 +15,15 @@
   left: 25%;
   z-index: 999;
   width: 50%;
-  height: 50%;
   background-color: white;
 }
 
 .popup-header {
   background-color: rgb(238, 52, 35);
+}
+
+.popup-body {
+  height: 100%;
 }
 
 .tn-logo {
