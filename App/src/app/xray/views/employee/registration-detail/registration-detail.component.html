@@ -1,5 +1,5 @@
 <div class="container">
-  <app-page-header
+  <tdec-page-header
     *ngIf="registration"
     [title]="
       registration.billingStatus === 'Active'
@@ -7,24 +7,19 @@
         : 'Tracking Number: ' + registration.id
     "
     [subTitle]="'Status: ' + registration.billingStatus"
-  ></app-page-header>
+  ></tdec-page-header>
 
-  <!-- TEST MODAL -->
-  <button type="button" class="btn btn-primary mt-2" (click)="openAlert()">
+  <!-- TEST MODALS -->
+  <button class="btn btn-primary mt-2" (click)="runAnimation()">
+    Loading
+  </button>
+  <button class="btn btn-primary mt-2 ml-2" (click)="openAlert()">
     Alert
   </button>
-  <button
-    type="button"
-    class="btn btn-primary mt-2 ml-2"
-    (click)="openConfirm()"
-  >
+  <button class="btn btn-primary mt-2 ml-2" (click)="openConfirm()">
     Confirm
   </button>
-  <button
-    type="button"
-    class="btn btn-primary mt-2 ml-2"
-    (click)="openPrompt()"
-  >
+  <button class="btn btn-primary mt-2 ml-2" (click)="openPrompt()">
     Prompt
   </button>
 
@@ -148,7 +143,7 @@
         [machine]="machine"
       ></app-machine-detail>
     </div>
-    <app-pager-controls [(pager)]="pager"></app-pager-controls>
+    <tdec-pager-controls [(pager)]="pager"></tdec-pager-controls>
 
     <!-- DOCUMENT INFORMATION -->
     <h3 class="details-title">Documents</h3>

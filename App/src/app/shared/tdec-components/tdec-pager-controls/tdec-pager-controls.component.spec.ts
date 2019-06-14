@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PagerControlsComponent } from './pager-controls.component';
+import { PagerControlsComponent } from './tdec-pager-controls.component';
 
 describe('PagerControlsComponent', () => {
   let component: PagerControlsComponent;
@@ -8,9 +8,8 @@ describe('PagerControlsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PagerControlsComponent ]
-    })
-    .compileComponents();
+      declarations: [PagerControlsComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

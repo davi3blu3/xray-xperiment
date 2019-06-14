@@ -36,16 +36,18 @@ export class RegistrationDetailComponent implements OnInit {
 
       this.pager = new Pager(this.registration.machines.length);
     });
-
-    // TESTING LOADING ANIMATION
-    // this.overlayService.loadingToggle.next(true);
-    // setTimeout(() => {
-    //   this.overlayService.loadingToggle.next(false);
-    // }, 2000);
   }
 
   saveEdit() {
     this.xrayService.postRegistration(this.registration);
+  }
+
+  // TESTING MODALS
+  runAnimation() {
+    this.overlayService.loadingToggle.next(true);
+    setTimeout(() => {
+      this.overlayService.loadingToggle.next(false);
+    }, 3000);
   }
 
   openAlert() {

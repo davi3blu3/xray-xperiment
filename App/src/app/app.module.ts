@@ -25,8 +25,8 @@ import { TdecModalComponent } from './shared/tdec-components/tdec-modal/tdec-mod
 
 // Shared Components
 import { AppComponent } from './app.component';
-import { PageHeaderComponent } from './shared/tdec-components/page-header/page-header.component';
-import { PagerControlsComponent } from './shared/tdec-components/pager-controls/pager-controls.component';
+import { PageHeaderComponent } from './shared/tdec-components/tdec-page-header/tdec-page-header.component';
+import { PagerControlsComponent } from './shared/tdec-components/tdec-pager-controls/tdec-pager-controls.component';
 import { MachineDetailComponent } from './xray/views/employee/registration-detail/machine-detail/machine-detail.component';
 import { TubeDetailComponent } from './xray/views/employee/registration-detail/machine-detail/tube-detail/tube-detail.component';
 

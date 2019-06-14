@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageHeaderComponent } from './page-header.component';
+import { PageHeaderComponent } from './tdec-page-header.component';
 
 describe('PageHeaderComponent', () => {
   let component: PageHeaderComponent;
@@ -8,9 +8,8 @@ describe('PageHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageHeaderComponent ]
-    })
-    .compileComponents();
+      declarations: [PageHeaderComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

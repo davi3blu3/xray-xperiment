@@ -2,9 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Pager } from '../../classes/pager';
 
 @Component({
-  selector: 'app-pager-controls',
-  templateUrl: './pager-controls.component.html',
-  styleUrls: ['./pager-controls.component.scss']
+  selector: 'tdec-pager-controls',
+  templateUrl: './tdec-pager-controls.component.html',
+  styleUrls: ['./tdec-pager-controls.component.scss']
 })
 export class PagerControlsComponent implements OnInit {
   @Input() pager: Pager;
