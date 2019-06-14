@@ -1,2 +1,4 @@
-<tdec-loading *ngIf="loadingToggle"></tdec-loading>
-<tdec-modal *ngIf="modalToggle"></tdec-modal>
+<div class="overlay" *ngIf="loadingToggle || modalToggle">
+  <tdec-loading *ngIf="loadingToggle"></tdec-loading>
+  <tdec-modal *ngIf="modalToggle"></tdec-modal>
+</div>
