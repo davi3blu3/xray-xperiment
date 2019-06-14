@@ -44,14 +44,14 @@ export class OverlayService {
     });
   }
 
-  prompt(message: string, btn1Txt: string = 'Submit') {
+  prompt(message: string, btnTxt: string = 'Submit') {
     console.log('service - prompt called');
     this.modalToggle.next(true);
 
     // create modal
     this.modalOptions.next({
       message: message,
-      btn1Txt: btn1Txt,
+      btn1Txt: btnTxt,
       btn2Txt: '',
       modalType: 'Prompt'
     });

@@ -25,6 +25,11 @@ $table-dark-bg: $tdec-color-navy__light;
  * TDEC Global Styles
  */
 
+// applied programatically during modal popup
+body.freeze-scroll {
+  overflow: hidden !important ;
+}
+
 .content {
   @include clearfix;
 

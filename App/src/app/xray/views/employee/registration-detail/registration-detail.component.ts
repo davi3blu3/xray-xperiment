@@ -20,9 +20,6 @@ export class RegistrationDetailComponent implements OnInit {
   loading: boolean;
   pager: Pager;
 
-  // currentContainerRef;
-  modalSub;
-
   myRes; // response from confirm modal
 
   constructor(
