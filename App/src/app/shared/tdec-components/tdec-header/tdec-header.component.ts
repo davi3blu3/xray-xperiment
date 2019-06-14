@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-tdec-header',
+  selector: 'tdec-header',
   templateUrl: './tdec-header.component.html',
   styleUrls: ['./tdec-header.component.scss']
 })

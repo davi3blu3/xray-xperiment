@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 
-import { ModalOption } from '../../classes/modal-option';
-import { OverlayService } from './../../services/overlay.service';
+import { ModalOption } from './../../../classes/modal-option';
+import { OverlayService } from './../../../services/overlay.service';
 
 @Component({
-  selector: 'app-tdec-modal',
+  selector: 'tdec-modal',
   templateUrl: './tdec-modal.component.html',
   styleUrls: ['./tdec-modal.component.scss']
 })

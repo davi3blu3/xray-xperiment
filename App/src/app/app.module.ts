@@ -19,9 +19,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 // TDEC Components
 import { TdecHeaderComponent } from './shared/tdec-components/tdec-header/tdec-header.component';
-import { TdecLoadingComponent } from './shared/tdec-components/tdec-loading/tdec-loading.component';
+import { TdecLoadingComponent } from './shared/tdec-components/tdec-overlay/tdec-loading/tdec-loading.component';
 import { TdecFooterComponent } from './shared/tdec-components/tdec-footer/tdec-footer.component';
-import { TdecModalComponent } from './shared/tdec-components/tdec-modal/tdec-modal.component';
+import { TdecModalComponent } from './shared/tdec-components/tdec-overlay/tdec-modal/tdec-modal.component';
 
 // Shared Components
 import { AppComponent } from './app.component';

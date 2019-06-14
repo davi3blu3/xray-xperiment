@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OverlayService } from '../../services/overlay.service';
 
 @Component({
-  selector: 'app-tdec-overlay',
+  selector: 'tdec-overlay',
   templateUrl: './tdec-overlay.component.html',
   styleUrls: ['./tdec-overlay.component.scss']
 })

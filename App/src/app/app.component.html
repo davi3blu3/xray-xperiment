@@ -1,9 +1,6 @@
-<app-tdec-overlay></app-tdec-overlay>
-<app-tdec-header [appName]="appName"></app-tdec-header>
+<tdec-overlay></tdec-overlay>
+<tdec-header [appName]="appName"></tdec-header>
 
 <router-outlet></router-outlet>
 
-<app-tdec-footer
-  [appName]="appName"
-  [appVersion]="appVersion"
-></app-tdec-footer>
+<tdec-footer [appName]="appName" [appVersion]="appVersion"></tdec-footer>

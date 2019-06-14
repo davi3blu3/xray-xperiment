@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tdec-loading',
+  selector: 'tdec-loading',
   templateUrl: './tdec-loading.component.html',
   styleUrls: ['./tdec-loading.component.scss']
 })

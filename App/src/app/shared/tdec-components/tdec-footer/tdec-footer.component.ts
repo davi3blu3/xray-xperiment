@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ApplicationModule } from '@angular/core';
 
 @Component({
-  selector: 'app-tdec-footer',
+  selector: 'tdec-footer',
   templateUrl: './tdec-footer.component.html',
   styleUrls: ['./tdec-footer.component.scss']
 })
