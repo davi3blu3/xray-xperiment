@@ -1,18 +1,10 @@
-.popup {
-  position: fixed;
-  top: 25%;
-  left: 25%;
-  z-index: 999;
-  width: 50%;
-  background-color: white;
+.tdec-modal {
+  display: block !important;
+  top: 20%;
 }
 
-.popup-header {
-  background-color: rgb(238, 52, 35);
-}
-
-.popup-body {
-  height: 100%;
+.tdec-modal-header {
+  background-color: skyblue;
 }
 
 .tn-logo {

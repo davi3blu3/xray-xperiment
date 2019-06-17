@@ -32,7 +32,6 @@ export class OverlayService {
   }
 
   confirm(message: string, btn1Txt: string = 'Ok', btn2Txt: string = 'Cancel') {
-    console.log('service - confirm called');
     this.modalToggle.next(true);
 
     // create modal
@@ -44,15 +43,18 @@ export class OverlayService {
     });
   }
 
-  prompt(message: string, btnTxt: string = 'Submit') {
-    console.log('service - prompt called');
+  prompt(
+    message: string,
+    btn1Txt: string = 'Submit',
+    btn2Txt: string = 'Cancel'
+  ) {
     this.modalToggle.next(true);
 
     // create modal
     this.modalOptions.next({
       message: message,
-      btn1Txt: btnTxt,
-      btn2Txt: '',
+      btn1Txt: btn1Txt,
+      btn2Txt: btn2Txt,
       modalType: 'Prompt'
     });
   }

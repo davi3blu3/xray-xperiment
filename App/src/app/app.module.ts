@@ -4,7 +4,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { environment } from './../environments/environment';
@@ -76,6 +76,7 @@ import { TdecOverlayComponent } from './shared/tdec-components/tdec-overlay/tdec
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     AngularFontAwesomeModule,
     environment.production
       ? []
